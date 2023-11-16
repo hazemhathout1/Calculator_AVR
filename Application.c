@@ -18,6 +18,14 @@ uint32 val;
 uint8 col=1;
 uint8 keypressed;
 
+interrupt_INTx_t int0_obj={
+		.EXT_INTERRUPTHANDLER=int0_App_ISR,
+		.edge=INTERRUPT_RISING_EDGE,
+		.source=INTERRUPT_EXTERNAL_INT0,
+		.mcu_pin.port=PORTD_INDEX,
+		.mcu_pin.pin=PIN2,
+		.mcu_pin.direction=DIRECTION_INPUT
+};
 
 int main()
 {
@@ -90,6 +98,19 @@ int main()
 void Application_initialize()
 {
 	ecu_layer_initialize();
+	interrupt_INTx_init(&int0_obj);
+}
+
+
+void int0_App_ISR(void)
+{
+	lcd_4bit_send_command(&lcd1,_LCD_CLEAR);
+	num1=ZERO_INIT;
+	num2=ZERO_INIT;
+	l_col=ZERO_INIT;
+	col=1;
+	val=ZERO_INIT;
+	value=ZERO_INIT;
 }
 
 

@@ -21,8 +21,8 @@ keypad_t keypad1={
 		.keypad_row_pins[1].pin=PIN1,
 		.keypad_row_pins[1].direction=DIRECTION_OUTPUT,
 		.keypad_row_pins[1].logic=GPIO_LOW,
-		.keypad_row_pins[2].port=PORTD_INDEX,
-		.keypad_row_pins[2].pin=PIN2,
+		.keypad_row_pins[2].port=PORTC_INDEX,
+		.keypad_row_pins[2].pin=PIN0,
 		.keypad_row_pins[2].direction=DIRECTION_OUTPUT,
 		.keypad_row_pins[2].logic=GPIO_LOW,
 		.keypad_row_pins[3].port=PORTD_INDEX,
@@ -131,7 +131,7 @@ void welcome_message()
 	for(uint8 i=0;i<=2;i++)
 	{
 		lcd_4bit_send_string_pos(&lcd1,1,3, "Calculator");
-		_delay_ms(200	);
+		_delay_ms(200);
 		lcd_4bit_send_string_pos(&lcd1,1,3, "           ");
 		_delay_ms(100);
 	}
