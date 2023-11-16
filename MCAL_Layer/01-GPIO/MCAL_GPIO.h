@@ -10,6 +10,7 @@
 
 /* Section : Includes */
 #include <stddef.h>
+//#include "include/avr/eeprom.h"
 #include "MCAL_STD_TYPES.h"
 #include "MCAL_GPIO_Private.h"
 #include "util/delay.h"
@@ -67,6 +68,8 @@ typedef enum{
 	PORTC_INDEX,
 	PORTD_INDEX
 }port_index_t;
+
+
 
 //4 ports {0..3}->in binary=11, then mmkn ahgezlaha 2 bits bas
 //8 pins {0..7}->in binary=111, then ha7gezlaha 3 bits
